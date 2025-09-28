@@ -1,6 +1,6 @@
 # Deathnote-1-Vulnhub-Walkthrough
 
-> **Machine:** [Sunset (VulnHub)](https://www.vulnhub.com/entry/deathnote-1,739/)
+> **Machine:** [Deathnote:1 (VulnHub)](https://www.vulnhub.com/entry/deathnote-1,739/)
 > **Author:** HWKDS
 > **Difficulty:** easy
 > **Tested on:** Linux - 27/09/2025
