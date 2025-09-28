@@ -1,1 +1,72 @@
 # Deathnote-1-Vulnhub-Walkthrough
+
+> **Machine:** [Sunset (VulnHub)](https://www.vulnhub.com/entry/deathnote-1,739/)
+> **Author:** HWKDS
+> **Difficulty:** easy
+> **Tested on:** Linux - 27/09/2025
+
+---
+
+
+Completed the **Deathnote:1** vulnerable machine. In this machine, our target is to find the flags and access the root. So, let’s get started.
+
+
+---
+
+## Table of contents
+
+1. Environment
+2. Summary of steps
+3. Detailed walkthrough
+
+   * 3.1 Scanning
+   * 3.2 Enumeration
+   * 3.3 Exploitation & Privilege escalation
+4. Screenshots (findings)
+5. Proof of access
+6. Appendix: commands & tools
+7. Responsible disclosure
+
+---
+
+## 1) Environment
+
+* VM: VirtualBox
+* Attacker OS: Kali Linux
+* Target IP used in this writeup: 192.168.29.46
+* Tools used: `netdiscover`, `nmap`, `dirb`, `hydra`.
+
+---
+
+## 2) Summary of steps
+
+1. Execute netdiscover command to identify the host ip.
+2. Full TCP port scan with `nmap` to identify services.
+3. Found web server hosted on port 80.
+4. Performed directory bruteforcing.
+5. Found users and passwords text files
+6. Bruteforced SSH.
+7. Local enumeration (`sudo -l`, SUID/cron checks, file permissions) revealed a privilege escalation path to root.
+
+---
+
+## 3) Detailed walkthrough
+
+### 3.1 Initial enumeration
+
+A short ARP discovery confirmed the target host on the local network.
+
+> See screenshot: ![Screenshot](assets/1.png) (ARP scan output).
+
+**Port scan (command used):**
+
+```bash
+nmap -A 192.168.29.46
+```
+
+Important open services observed from the scan:
+
+* `22/tcp` — SSH (OpenSSH 7.9p1)
+* `80/tcp` — http (Apache httpd 2.4.38)
+
+> See screenshot: ![Screenshot](assets/2.png) (nmap output showing SSH/http).
