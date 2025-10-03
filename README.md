@@ -70,3 +70,11 @@ Important open services observed from the scan:
 * `80/tcp` — http (Apache httpd 2.4.38)
 
 > See screenshot: ![Screenshot](assets/2.png) (nmap output showing SSH/http).
+
+### 3.2 Found WordPress uploads folder via directory brute force:
+
+> See screenshot: ![Screenshot](assets/3.png) (dirb bruteforce).
+> See screenshot: ![Screenshot](assets/4.png) (found directory wp-content/uploads).
+> See screenshot: ![Screenshot](assets/5.png) (found users.txt and notes.txt inside wp-content/uploads/2021/07).
+> See screenshot: ![Screenshot](assets/7.png) (users.txt).
+> See screenshot: ![Screenshot](assets/6.png) (notes.txt).
