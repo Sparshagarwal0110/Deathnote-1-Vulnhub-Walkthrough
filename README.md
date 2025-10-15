@@ -78,3 +78,27 @@ Important open services observed from the scan:
 > See screenshot: ![Screenshot](assets/5.png) (found users.txt and notes.txt inside wp-content/uploads/2021/07).
 > See screenshot: ![Screenshot](assets/7.png) (users.txt).
 > See screenshot: ![Screenshot](assets/6.png) (notes.txt).
+
+### 3.3 Used Hydra to brute force ssh service:
+
+> See screenshot: ![Screenshot](assets/8.png) (hydra output).
+
+### 3.4 Logged in with the credentials and found a wav file:
+
+> See screenshot: ![Screenshot](assets/9.png) (wav file output).
+
+### 3.4 Decoded the output using CyberChef:
+
+> See screenshot: ![Screenshot](assets/10.png) (cyberchef output).
+
+### 3.4 Logged in as kira:
+
+> See screenshot: ![Screenshot](assets/11.png) (kira.txt).
+
+### 3.4 Escalated Priveleges:
+
+> See screenshot: ![Screenshot](assets/13.png) (root.txt).
+
+## Responsible disclosure
+
+This walkthrough is for educational purposes. Do not use these techniques on systems you do not own or have explicit permission to test. If you believe you have discovered a vulnerability on a real service, follow responsible disclosure procedures with the service owner.
